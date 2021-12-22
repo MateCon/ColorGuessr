@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import DisplayRound from "./DisplayRound";
 import { useNavigate } from "react-router-dom";
 import { RGB } from "../types/interfaces";
@@ -13,6 +13,19 @@ interface Props {
 
 const Index: FC<Props> = ({ scores, round, color, prevColor }) => {
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		let listener: any = window.addEventListener("keydown", (e) => {
+			if (e.key === "Enter") {
+				if (round < 5) navigate("/game");
+				else navigate("/end-screen");
+			}
+		});
+
+		return () => {
+			if (listener) window.removeEventListener("keydown", listener);
+		}
+	});
 
 	return (
 		<section>
