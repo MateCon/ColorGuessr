@@ -14,7 +14,6 @@ const DisplayRound: FC<Props> = ({ round }) => {
             else arr.push(false);
         }
         setBitArr(arr);
-        console.log(arr);
     }, [round, setBitArr]);
 
 

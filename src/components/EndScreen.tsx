@@ -8,22 +8,21 @@ interface Props {
 }
 
 const Index: FC<Props> = ({ scores, restart }) => {
-	const [finalScore, setFinalScore] = useState<number>(0);
 	const navigate = useNavigate();
 
-	useEffect(() => {
+	const getFinalScore = (): number => {
 		let sum: number = 0;
 		for (let s of scores) {
 			sum += s;
 		}
-		setFinalScore(Math.floor(sum / scores.length));
-	}, [scores, setFinalScore]);
+		return Math.floor(sum / scores.length);
+	}
 
 	return (
 		<section>
-			<h1>Your final score was {finalScore}!</h1>
+			<h1>Your final score was {getFinalScore()}!</h1>
 			<Slider
-				defaultValue={finalScore / 5000 * 100}
+				defaultValue={Math.round(getFinalScore() / 5000 * 100)}
 				disabled
 			/>
 			<button className="btn btn-dark" onClick={() => {
