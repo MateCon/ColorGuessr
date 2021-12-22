@@ -18,7 +18,7 @@ const map = (value: number, x1: number, y1: number, x2: number, y2: number): num
 
 export const getScore = (guess: RGB, target: RGB): number => {
     const diff = Math.abs(guess.r - target.r) + Math.abs(guess.g - target.g) + Math.abs(guess.b - target.b);
-    return 5000 - map(diff, 0, 756, 0, 5000);
+    return Math.floor(5000 - map(diff, 0, 756, 0, 5000));
 }
 
 export const setBgColor = (color: RGB): void => {

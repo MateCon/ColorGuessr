@@ -10,21 +10,34 @@ import "./App.scss";
 
 const App: FC = () => {
 	const [color, setColor] = useState<RGB>({ r: 0, g: 0, b: 0 });
+	const [prevColor, setPrevColor] = useState<RGB>({ r: 0, g: 0, b: 0 });
+	const [scores, setScores] = useState<Array<number>>([0, 0, 0, 0, 0]);
+	const [round, setRound] = useState<number>(0);
 
 	useEffect(() => {
+		changeColor();
+	}, [setColor]);
+
+	const changeColor = (): void => {
 		const c: RGB = generateColor();
 		setColor(c);
 		setBgColor(c);
 		setTheme(getTheme(c));
-	}, [setColor]);
+	};
+
+	const restart = (): void => {
+		setScores([0, 0, 0, 0, 0]);
+		setRound(0);
+		changeColor();
+	};
 
 	return (
 		<BrowserRouter>
 			<Routes>
 				<Route path='/' element={<Index />} />
-				<Route path='/game' element={<Game />} />
-				<Route path='/results' element={<Results />} />
-				<Route path='/end-screen' element={<EndScreen />} />
+				<Route path='/game' element={<Game color={color} setColor={setColor} round={round} setRound={setRound} setScores={setScores} changeColor={changeColor} setPrevColor={setPrevColor} />} />
+				<Route path='/results' element={<Results scores={scores} round={round} color={color} prevColor={prevColor} />} />
+				<Route path='/end-screen' element={<EndScreen scores={scores} restart={restart} />} />
 				<Route path='*' element={<h1>404 - Page not found.</h1>} />
 			</Routes>
 		</BrowserRouter>
