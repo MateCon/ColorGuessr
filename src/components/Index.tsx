@@ -1,11 +1,19 @@
 import { FC } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Index: FC = () => {
+	const navigate = useNavigate();
+
 	return (
-		<div>
+		<section>
 			<h1>Color Guessr!</h1>
-			<button className="btn btn-dark">Start</button>
-		</div>
+			<button
+				className="btn btn-dark"
+				onClick={() => {
+					navigate("/game");
+				}}
+			>Start</button>
+		</section>
 	);
 };
 

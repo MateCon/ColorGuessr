@@ -2,10 +2,10 @@ import { FC } from "react";
 
 const Index: FC = () => {
 	return (
-		<div>
+		<section>
 			<h1>Color Guessr!</h1>
 			<button className="btn btn-dark">Next</button>
-		</div>
+		</section>
 	);
 };
 
