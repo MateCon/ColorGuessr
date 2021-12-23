@@ -8,9 +8,9 @@ import DisplayRound from "./DisplayRound";
 import { getScore } from "../helpers/ColorMethods";
 
 const validationSchema = yup.object({
-	r: yup.number().required("This field is required").min(0, "The minumum is 0").max(255, "The maximum is 255"),
-	g: yup.number().required("This field is required").min(0, "The minumum is 0").max(255, "The maximum is 255"),
-	b: yup.number().required("This field is required").min(0, "The minumum is 0").max(255, "The maximum is 255")
+	r: yup.number().typeError("This field requires a number").required("This field is required").min(0, "The minumum is 0").max(255, "The maximum is 255"),
+	g: yup.number().typeError("This field requires a number").required("This field is required").min(0, "The minumum is 0").max(255, "The maximum is 255"),
+	b: yup.number().typeError("This field requires a number").required("This field is required").min(0, "The minumum is 0").max(255, "The maximum is 255")
 });
 
 interface Props {
@@ -37,14 +37,17 @@ const Game: FC<Props> = ({ color, setColor, round, setRound, setScores, changeCo
 			<h1>What color is this?</h1>
 			<Formik
 				initialValues={{
-					r: 0,
-					g: 0,
-					b: 0,
-				}}
-				validationSchema={validationSchema}
+					r: null,
+					g: null,
+					b: null,
+				}} validationSchema={validationSchema}
 				onSubmit={async (values, { setSubmitting }) => {
 					setSubmitting(true);
-					const c: RGB = { ...values };
+					if (!values.r || !values.g || !values.b) {
+						setSubmitting(false);
+						return;
+					}
+					const c: RGB = { r: values.r, g: values.g, b: values.b };
 					setScores((scores: Array<number>) => {
 						scores[round - 1] = getScore(c, color);
 						return scores;
@@ -62,16 +65,19 @@ const Game: FC<Props> = ({ color, setColor, round, setRound, setScores, changeCo
 								placeholder="Red"
 								name="r"
 								type="number"
+								required
 							/>
 							<TextField
 								placeholder="Green"
 								name="g"
 								type="number"
+								required
 							/>
 							<TextField
 								placeholder="Blue"
 								name="b"
 								type="number"
+								required
 							/>
 						</div>
 						<button type="submit" className="btn btn-dark">Guess</button>
