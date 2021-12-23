@@ -143,3 +143,26 @@ h1 {
 	width: 20px !important;
 	height: 20px !important;
 }
+
+@media (max-width: 600px) {
+	#root {
+		padding: 2rem;
+	}
+
+	h1 {
+		text-align: center;
+		font-size: 2.5rem;
+	}
+}
+
+input {
+	font-size: 1.75rem !important;
+}
+
+form button {
+	margin-top: 2rem !important;
+}
+
+.Mui-error {
+	font-size: 1.25rem !important;
+}
