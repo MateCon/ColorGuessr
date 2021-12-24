@@ -152,7 +152,7 @@ h1 {
 	height: 20px !important;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 	#root {
 		padding: 2rem;
 	}
@@ -160,6 +160,10 @@ h1 {
 	h1 {
 		text-align: center;
 		font-size: 2.5rem;
+	}
+
+	.color-result-container {
+		font-size: 1.1rem;
 	}
 }
 

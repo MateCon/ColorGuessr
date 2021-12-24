@@ -37,8 +37,8 @@ const Index: FC<Props> = ({ scores, round, color, prevColor }) => {
 			/>
 			<div className="color-result-container">
 				<div>
-					<p>Your guess was: {color.r}, {color.g}, {color.b}</p>
-					<p>The correct answer was: {prevColor.r}, {prevColor.g}, {prevColor.b}</p>
+					<p>Your guess: ({color.r}, {color.g}, {color.b})</p>
+					<p>Correct answer: ({prevColor.r}, {prevColor.g}, {prevColor.b})</p>
 				</div>
 				<div>
 					<div className="drop" style={{
