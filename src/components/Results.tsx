@@ -35,8 +35,20 @@ const Index: FC<Props> = ({ scores, round, color, prevColor }) => {
 				defaultValue={scores[round - 1] / 5000 * 100}
 				disabled
 			/>
-			<p>Your guess was: {color.r}, {color.g}, {color.b}</p>
-			<p>The correct answer was: {prevColor.r}, {prevColor.g}, {prevColor.b}</p>
+			<div className="color-result-container">
+				<div>
+					<p>Your guess was: {color.r}, {color.g}, {color.b}</p>
+					<p>The correct answer was: {prevColor.r}, {prevColor.g}, {prevColor.b}</p>
+				</div>
+				<div>
+					<div className="drop" style={{
+						backgroundColor: `rgb(${color.r}, ${color.g}, ${color.b})`
+					}} />
+					<div className="drop" style={{
+						backgroundColor: `rgb(${prevColor.r}, ${prevColor.g}, ${prevColor.b})`
+					}} />
+				</div>
+			</div>
 			<button className="btn btn-dark" onClick={() => {
 				if (round < 5) navigate("/game");
 				else navigate("/end-screen");

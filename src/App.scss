@@ -43,6 +43,10 @@
 			background-color: white;
 		}
 	}
+
+	.drop {
+		border: 3px solid white;
+	}
 }
 
 .dark-theme {
@@ -72,6 +76,10 @@
 		.fill {
 			background-color: black;
 		}
+	}
+
+	.drop {
+		border: 3px solid black;
 	}
 }
 
@@ -165,4 +173,30 @@ form button {
 
 .Mui-error {
 	font-size: 1.25rem !important;
+}
+
+.color-result-container {
+	display: flex;
+	flex-direction: row;
+	gap: 1rem;
+	text-align: end;
+	font-size: 1.3rem;
+	margin-bottom: -1rem;
+
+	> div {
+		display: flex;
+		flex-direction: column;
+		height: 100px;
+		justify-content: center;
+
+		* {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+.drop {
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
 }
