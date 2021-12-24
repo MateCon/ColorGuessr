@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 const Index: FC = () => {
 	const navigate = useNavigate();
@@ -13,6 +14,12 @@ const Index: FC = () => {
 					navigate("/game");
 				}}
 			>Start</button>
+			<div className="github">
+				<a href="http://github.com/matecon" target="blank">
+					<p>MateCon</p>
+					<GitHubIcon />
+				</a>
+			</div>
 		</section>
 	);
 };
