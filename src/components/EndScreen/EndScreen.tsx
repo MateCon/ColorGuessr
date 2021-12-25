@@ -19,7 +19,7 @@ const Index: FC<Props> = ({ scores, restart }) => {
 		confettiConfig.stagger = 10;
 		confettiConfig.elementCount = 200;
 		confettiConfig.duration = 6000;
-		if (getFinalScore() > 100) setConfetti(true);
+		if (getFinalScore() > 4000) setConfetti(true);
 	});
 
 	const getFinalScore = (): number => {
