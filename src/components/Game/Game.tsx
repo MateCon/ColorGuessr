@@ -44,7 +44,11 @@ const Game: FC<Props> = ({ color, setColor, round, setRound, setScores, changeCo
 				}} validationSchema={validationSchema}
 				onSubmit={async (values, { setSubmitting }) => {
 					setSubmitting(true);
-					if (!values.r || !values.g || !values.b) {
+					if (
+						(!values.r && values.r !== 0) ||
+						(!values.g && values.g !== 0) ||
+						(!values.b && values.b !== 0)
+					) {
 						setSubmitting(false);
 						return;
 					}
