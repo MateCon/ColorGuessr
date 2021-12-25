@@ -6,21 +6,23 @@ const Index: FC = () => {
 	const navigate = useNavigate();
 
 	return (
-		<section>
-			<h1>Color Guessr!</h1>
-			<button
-				className="btn btn-dark"
-				onClick={() => {
-					navigate("/game");
-				}}
-			>Start</button>
+		<div>
+			<section>
+				<h1>Color Guessr!</h1>
+				<button
+					className="btn btn-dark"
+					onClick={() => {
+						navigate("/game");
+					}}
+				>Start</button>
+			</section>
 			<div className="github">
 				<a href="http://github.com/matecon" target="blank">
 					<p>MateCon</p>
 					<GitHubIcon />
 				</a>
 			</div>
-		</section>
+		</div>
 	);
 };
 

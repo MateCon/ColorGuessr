@@ -1,11 +1,11 @@
 import { FC, useEffect } from "react";
-import { RGB } from "../types/interfaces";
+import { RGB } from "../../types/interfaces";
 import { Formik, Form } from "formik";
-import TextField from "./TextField";
+import TextField from "../TextField";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
-import DisplayRound from "./DisplayRound";
-import { getScore } from "../helpers/ColorMethods";
+import DisplayRound from "../DisplayRound";
+import { getScore } from "../../helpers/ColorMethods";
 
 const validationSchema = yup.object({
 	r: yup.number().typeError("This field requires a number").required("This field is required").min(0, "The minumum is 0").max(255, "The maximum is 255"),
