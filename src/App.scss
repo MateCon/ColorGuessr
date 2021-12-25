@@ -190,17 +190,6 @@ form button {
 	border-radius: 50%;
 }
 
-.github a {
-	position: absolute;
-	bottom: 20px;
-	right: 20px;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 0.5rem;
-	text-decoration: none;
-}
-
 @media (max-width: 800px) {
 	#root {
 		padding: 2rem;
@@ -213,10 +202,5 @@ form button {
 
 	.color-result-container {
 		font-size: 1.1rem;
-	}
-
-	.github a {
-		right: 50%;
-		transform: translateX(50%);
 	}
 }

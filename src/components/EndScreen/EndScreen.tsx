@@ -1,5 +1,5 @@
 import { Slider } from "@material-ui/core";
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 
 interface Props {

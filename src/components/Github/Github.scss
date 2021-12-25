@@ -1,0 +1,15 @@
+#github a {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.5rem;
+	text-decoration: none;
+
+	@media (max-width: 800px) {
+		right: 50%;
+		transform: translateX(50%);
+	}
+}
