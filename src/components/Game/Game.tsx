@@ -6,6 +6,7 @@ import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import DisplayRound from "../DisplayRound";
 import { getScore } from "../../helpers/ColorMethods";
+import Button from "../Button";
 
 const validationSchema = yup.object({
 	r: yup.number().typeError("This field requires a number").required("This field is required").min(0, "The minumum is 0").max(255, "The maximum is 255"),
@@ -80,7 +81,7 @@ const Game: FC<Props> = ({ color, setColor, round, setRound, setScores, changeCo
 								required
 							/>
 						</div>
-						<button type="submit" className="btn btn-dark">Guess</button>
+						<Button type="submit" className="btn btn-dark">Guess</Button>
 					</Form>
 				)}
 			</Formik>

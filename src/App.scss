@@ -27,12 +27,6 @@
 	.MuiInput-underline:before {
 		border-bottom: 1px solid white;
 	}
-
-	button {
-		background-color: white;
-		color: black;
-		mix-blend-mode: lighten;
-	}
 }
 
 .dark-theme {
@@ -46,12 +40,6 @@
 
 	.MuiInput-underline:before {
 		border-bottom: 1px solid black;
-	}
-
-	button {
-		background-color: black;
-		color: white;
-		mix-blend-mode: darken;
 	}
 }
 
@@ -74,66 +62,17 @@ form {
 	}
 }
 
-button {
-	padding: 0.5rem 2.5rem;
-	border-radius: 100px;
-	border: none;
-	background-color: black;
-	color: white;
-	mix-blend-mode: darken;
-	font-size: 1.5rem;
-	font-weight: 600;
-	transform: all 0.2s;
-
-	&:hover {
-		cursor: pointer;
-		transform: scale(1.05);
-	}
-}
-
-h1 {
-	font-size: 3.5rem;
-	font-weight: 700;
-}
-
-.display-round {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	display: flex;
-	flex-direction: row;
-	gap: 10px;
-
-	div {
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
-		border: none;
-	}
-}
-
-// slider
-.MuiSlider-rail,
-.MuiSlider-track {
-	height: 20px !important;
-}
-
-.MuiSlider-thumb.Mui-disabled {
-	transform: translate(-5px, 3px);
-	width: 20px !important;
-	height: 20px !important;
+.Mui-error {
+	font-size: 1.25rem !important;
 }
 
 input {
 	font-size: 1.75rem !important;
 }
 
-form button {
-	margin-top: 2rem !important;
-}
-
-.Mui-error {
-	font-size: 1.25rem !important;
+h1 {
+	font-size: 3.5rem;
+	font-weight: 700;
 }
 
 @media (max-width: 800px) {

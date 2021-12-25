@@ -1,6 +1,7 @@
 import { Slider } from "@material-ui/core";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "../Button";
 
 interface Props {
 	scores: Array<number>;
@@ -25,10 +26,10 @@ const Index: FC<Props> = ({ scores, restart }) => {
 				defaultValue={Math.round(getFinalScore() / 5000 * 100)}
 				disabled
 			/>
-			<button className="btn btn-dark" onClick={() => {
+			<Button className="btn btn-dark" onClick={() => {
 				restart();
 				navigate("/game");
-			}}>Play Again</button>
+			}}>Play Again</Button>
 		</section>
 	);
 };

@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { RGB } from "../../types/interfaces";
 import Slider from "@material-ui/core/Slider";
 import ColorResult from "../ColorResult";
+import Button from "../Button";
+import "./Results.scss";
 
 interface Props {
 	scores: Array<number>;
@@ -37,10 +39,10 @@ const Index: FC<Props> = ({ scores, round, color, prevColor }) => {
 				disabled
 			/>
 			<ColorResult color={color} prevColor={prevColor} />
-			<button className="btn btn-dark" onClick={() => {
+			<Button className="btn btn-dark" onClick={() => {
 				if (round < 5) navigate("/game");
 				else navigate("/end-screen");
-			}}>Next</button>
+			}}>Next</Button>
 		</section>
 	);
 };

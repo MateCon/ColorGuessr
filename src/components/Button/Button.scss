@@ -1,0 +1,32 @@
+button {
+	padding: 0.5rem 2.5rem;
+	border-radius: 100px;
+	border: none;
+	background-color: black;
+	color: white;
+	mix-blend-mode: darken;
+	font-size: 1.5rem;
+	font-weight: 600;
+	transform: all 0.2s;
+
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.05);
+	}
+}
+
+.light-theme button {
+	background-color: white;
+	color: black;
+	mix-blend-mode: lighten;
+}
+
+.dark-theme button {
+	background-color: black;
+	color: white;
+	mix-blend-mode: darken;
+}
+
+form button {
+	margin-top: 2rem !important;
+}

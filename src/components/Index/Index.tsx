@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import Github from "../Github";
+import Button from "../Button";
 
 const Index: FC = () => {
 	const navigate = useNavigate();
@@ -9,12 +10,12 @@ const Index: FC = () => {
 		<div>
 			<section>
 				<h1>Color Guessr!</h1>
-				<button
+				<Button
 					className="btn btn-dark"
 					onClick={() => {
 						navigate("/game");
 					}}
-				>Start</button>
+				>Start</Button>
 			</section>
 			<Github />
 		</div>
