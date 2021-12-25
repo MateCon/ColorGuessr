@@ -16,9 +16,6 @@ const Index: FC<Props> = ({ scores, restart }) => {
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		confettiConfig.stagger = 10;
-		confettiConfig.elementCount = 200;
-		confettiConfig.duration = 6000;
 		if (getFinalScore() > 4000) setConfetti(true);
 	});
 
@@ -32,7 +29,7 @@ const Index: FC<Props> = ({ scores, restart }) => {
 
 	return (
 		<section>
-			<Confetti active={confetti} config={confettiConfig} />
+			<Confetti active={confetti} config={{ ...confettiConfig, stagger: 10, elementCount: 200, duration: 6000 }} />
 			<h1>Your final score was {getFinalScore()}!</h1>
 			<Slider
 				defaultValue={Math.round(getFinalScore() / 5000 * 100)}
