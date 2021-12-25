@@ -3,6 +3,7 @@ import DisplayRound from "../DisplayRound";
 import { useNavigate } from "react-router-dom";
 import { RGB } from "../../types/interfaces";
 import Slider from "@material-ui/core/Slider";
+import ColorResult from "../ColorResult";
 
 interface Props {
 	scores: Array<number>;
@@ -35,20 +36,7 @@ const Index: FC<Props> = ({ scores, round, color, prevColor }) => {
 				defaultValue={scores[round - 1] / 5000 * 100}
 				disabled
 			/>
-			<div className="color-result-container">
-				<div>
-					<p>Your guess: ({color.r}, {color.g}, {color.b})</p>
-					<p>Correct answer: ({prevColor.r}, {prevColor.g}, {prevColor.b})</p>
-				</div>
-				<div>
-					<div className="drop" style={{
-						backgroundColor: `rgb(${color.r}, ${color.g}, ${color.b})`
-					}} />
-					<div className="drop" style={{
-						backgroundColor: `rgb(${prevColor.r}, ${prevColor.g}, ${prevColor.b})`
-					}} />
-				</div>
-			</div>
+			<ColorResult color={color} prevColor={prevColor} />
 			<button className="btn btn-dark" onClick={() => {
 				if (round < 5) navigate("/game");
 				else navigate("/end-screen");

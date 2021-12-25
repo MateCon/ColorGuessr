@@ -1,0 +1,19 @@
+.light-theme .display-round {
+	div {
+		border: 1px solid white;
+	}
+
+	.fill {
+		background-color: white;
+	}
+}
+
+.dark-theme .display-round {
+	div {
+		border: 1px solid black;
+	}
+
+	.fill {
+		background-color: black;
+	}
+}

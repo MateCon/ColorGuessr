@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react';
+import "./DisplayRound.scss";
 
 interface Props {
     round: number;
@@ -15,7 +16,6 @@ const DisplayRound: FC<Props> = ({ round }) => {
         }
         setBitArr(arr);
     }, [round, setBitArr]);
-
 
     return (
         <div className="display-round">
