@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
-import DisplayRound from "./DisplayRound";
+import DisplayRound from "../DisplayRound";
 import { useNavigate } from "react-router-dom";
-import { RGB } from "../types/interfaces";
+import { RGB } from "../../types/interfaces";
 import Slider from "@material-ui/core/Slider";
 
 interface Props {
