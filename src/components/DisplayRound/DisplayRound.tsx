@@ -6,14 +6,12 @@ interface Props {
 }
 
 const DisplayRound: FC<Props> = ({ round }) => {
-    const [bitArr, setBitArr] = useState<Array<boolean>>([false, false, false, false, false]);
+    const [bitArr, setBitArr] = useState<Array<boolean>>(new Array(5).fill(false));
 
     useEffect(() => {
-        const arr = [];
-        for (let i = 0; i < 5; i++) {
-            if (i < round) arr.push(true);
-            else arr.push(false);
-        }
+        const arr = new Array(5).fill(false);
+        for (let i = 0; i < round; i++)
+            arr[i] = true;
         setBitArr(arr);
     }, [round, setBitArr]);
 
