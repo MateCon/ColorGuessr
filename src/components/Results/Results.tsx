@@ -37,7 +37,7 @@ const Index: FC<Props> = ({ scores, round, color, prevColor }) => {
 		return () => {
 			if (listener) window.removeEventListener("keydown", listener);
 		}
-	});
+	}, [round, navigate, scores]);
 
 	return (
 		<section>

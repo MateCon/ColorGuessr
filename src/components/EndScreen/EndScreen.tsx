@@ -1,7 +1,10 @@
 import { Slider } from "@material-ui/core";
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../Button";
+import confettiConfig from "../../helpers/ConfettiConfig";
+import Confetti from "react-dom-confetti";
+import { config } from "process";
 
 interface Props {
 	scores: Array<number>;
@@ -9,7 +12,15 @@ interface Props {
 }
 
 const Index: FC<Props> = ({ scores, restart }) => {
+	const [confetti, setConfetti] = useState<boolean>(false);
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		confettiConfig.stagger = 10;
+		confettiConfig.elementCount = 200;
+		confettiConfig.duration = 6000;
+		if (getFinalScore() > 100) setConfetti(true);
+	});
 
 	const getFinalScore = (): number => {
 		let sum: number = 0;
@@ -21,6 +32,7 @@ const Index: FC<Props> = ({ scores, restart }) => {
 
 	return (
 		<section>
+			<Confetti active={confetti} config={confettiConfig} />
 			<h1>Your final score was {getFinalScore()}!</h1>
 			<Slider
 				defaultValue={Math.round(getFinalScore() / 5000 * 100)}
